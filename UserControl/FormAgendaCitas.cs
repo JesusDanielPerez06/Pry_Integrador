@@ -22,14 +22,30 @@ namespace pry_integrador.UserControl
         {
             Conexion cn = new Conexion();
 
-            string consulta = "SELECT nombre AS NOMBRE, curp AS CURP, telefono AS TELEFONO FROM pacientes";
+            string consulta = @"SELECT
+                        idPaciente AS 'ID',
+                        nombre AS 'Nombre',
+                        curp AS 'CURP',
+                        telefono AS 'Teléfono',
+                        correo AS 'Correo',
+                        edad AS 'Edad',
+                        fechaNacimiento AS 'Fecha de Nacimiento',
+                        tipoSangre AS 'Tipo de Sangre',
+                        direccion AS 'Dirección',
+                        enfermedades AS 'Enfermedades'
+                        FROM pacientes";
 
-            MySqlDataAdapter da = new MySqlDataAdapter(consulta, cn.Conectar());
+            MySqlConnection conexion = cn.Conectar();
 
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
 
-            dataGridView1.DataSource = dt;
+            DataTable tabla = new DataTable();
+
+            adaptador.Fill(tabla);
+
+            dataGridView1.DataSource = tabla;
+
+            conexion.Close();
         }
 
         private void FormInicio_Load(object sender, EventArgs e)

@@ -24,7 +24,6 @@ namespace pry_integrador.Medicos.Registro_de_medicos
         private void btonRegistrar_Click(object sender, EventArgs e)
         {
 
-
             if (string.IsNullOrWhiteSpace(textNombreM.Text))
             {
                 MessageBox.Show(

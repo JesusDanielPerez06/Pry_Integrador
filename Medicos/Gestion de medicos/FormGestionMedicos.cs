@@ -53,10 +53,42 @@ namespace pry_integrador.Medicos.Gestion_de_medicos
 
         private void btonEditar_Click(object sender, EventArgs e)
         {
-           FormEditarMedico form = new FormEditarMedico();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.ShowDialog();
-            
+           
+            if (dgvMedicos.CurrentRow == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un médico.",
+                    "Editar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+            int idmedico = Convert.ToInt32(
+                dgvMedicos.CurrentRow.Cells["id_medico"].Value);
+
+            string nombre = dgvMedicos.CurrentRow.Cells["nombre"].Value.ToString();
+            string apellidoPaterno = dgvMedicos.CurrentRow.Cells["apellido_paterno"].Value.ToString();
+            string apellidoMaterno = dgvMedicos.CurrentRow.Cells["apellido_materno"].Value.ToString();
+            string telefono = dgvMedicos.CurrentRow.Cells["telefono"].Value.ToString();
+            string correo = dgvMedicos.CurrentRow.Cells["correo_electronico"].Value.ToString();
+            string cedula = dgvMedicos.CurrentRow.Cells["cedula"].Value.ToString();
+            string especialidad = dgvMedicos.CurrentRow.Cells["especialidad"].Value.ToString();
+
+            FormEditarMedico form = new FormEditarMedico(
+                idmedico,
+                nombre,
+                apellidoPaterno,
+                apellidoMaterno,
+                telefono,
+                correo,
+                cedula,
+                especialidad);
+
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)

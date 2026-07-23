@@ -17,6 +17,9 @@ namespace pry_integrador.Registro_de_Pacientes
             InitializeComponent();
         }
 
-        
+        private void BtonSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

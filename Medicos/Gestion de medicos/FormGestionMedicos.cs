@@ -50,6 +50,19 @@ namespace pry_integrador.Medicos.Gestion_de_medicos
 
             CargarMedicos();
         }
+
+        private void btonEditar_Click(object sender, EventArgs e)
+        {
+           FormEditarMedico form = new FormEditarMedico();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
             
 }

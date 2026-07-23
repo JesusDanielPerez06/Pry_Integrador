@@ -49,13 +49,13 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cboConsultorio = new System.Windows.Forms.ComboBox();
+            this.dtpCita = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboMedico = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -189,6 +189,15 @@
             // cboTipoSangre
             // 
             this.cboTipoSangre.FormattingEnabled = true;
+            this.cboTipoSangre.Items.AddRange(new object[] {
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"});
             this.cboTipoSangre.Location = new System.Drawing.Point(345, 228);
             this.cboTipoSangre.Name = "cboTipoSangre";
             this.cboTipoSangre.Size = new System.Drawing.Size(121, 24);
@@ -214,24 +223,27 @@
             // 
             // btn_agregar
             // 
+            this.btn_agregar.BackColor = System.Drawing.Color.Chartreuse;
             this.btn_agregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.Location = new System.Drawing.Point(215, 652);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(97, 35);
             this.btn_agregar.TabIndex = 19;
             this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.UseVisualStyleBackColor = false;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Red;
             this.btn_cancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_cancelar.Location = new System.Drawing.Point(325, 652);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(86, 35);
             this.btn_cancelar.TabIndex = 20;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // label10
@@ -254,20 +266,20 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Consultorio:";
             // 
-            // comboBox2
+            // cboConsultorio
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(978, 369);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(220, 24);
-            this.comboBox2.TabIndex = 24;
+            this.cboConsultorio.FormattingEnabled = true;
+            this.cboConsultorio.Location = new System.Drawing.Point(978, 369);
+            this.cboConsultorio.Name = "cboConsultorio";
+            this.cboConsultorio.Size = new System.Drawing.Size(220, 24);
+            this.cboConsultorio.TabIndex = 24;
             // 
-            // dateTimePicker2
+            // dtpCita
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(978, 481);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 25;
+            this.dtpCita.Location = new System.Drawing.Point(978, 481);
+            this.dtpCita.Name = "dtpCita";
+            this.dtpCita.Size = new System.Drawing.Size(200, 22);
+            this.dtpCita.TabIndex = 25;
             // 
             // label12
             // 
@@ -281,23 +293,27 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Chartreuse;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(1154, 596);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 32);
             this.button3.TabIndex = 27;
             this.button3.Text = "OK";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Location = new System.Drawing.Point(1273, 596);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 32);
             this.button4.TabIndex = 28;
             this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
@@ -309,13 +325,17 @@
             this.label13.TabIndex = 29;
             this.label13.Text = "Medico:";
             // 
-            // comboBox3
+            // cboMedico
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(1287, 369);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(212, 24);
-            this.comboBox3.TabIndex = 30;
+            this.cboMedico.FormattingEnabled = true;
+            this.cboMedico.Items.AddRange(new object[] {
+            "Dr. Juan Perez",
+            "Dra. Maria Lopez",
+            "Dr. Carlos Gomez"});
+            this.cboMedico.Location = new System.Drawing.Point(1287, 369);
+            this.cboMedico.Name = "cboMedico";
+            this.cboMedico.Size = new System.Drawing.Size(212, 24);
+            this.cboMedico.TabIndex = 30;
             // 
             // label14
             // 
@@ -354,13 +374,13 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cboMedico);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.dtpCita);
+            this.Controls.Add(this.cboConsultorio);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_cancelar);
@@ -415,13 +435,13 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox cboConsultorio;
+        private System.Windows.Forms.DateTimePicker dtpCita;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboMedico;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.DataGridView dataGridView1;

@@ -53,6 +53,52 @@ namespace pry_integrador
             {
                 connection.Close();
             }
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                MessageBox.Show(
+                    "El nombre de usuario es obligatorio.",
+                    "Validacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                // Enfocar el campo para que el usuario corrija
+                txtUsuario.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                MessageBox.Show(
+                    "La contraseña es obligatoria.",
+                    "Validacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtContraseña.Focus();
+                return;
+            }
+
+            if (txtContraseña.Text.Length < 8)
+            {
+                MessageBox.Show(
+                    "La contraseña debe tener al menos 8 caracteres.",
+                    "Validacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtContraseña.Focus();
+                return;
+            }
+
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtUsuario.Clear();
+            txtContraseña.Clear();
+            txtUsuario.Focus();
         }
     }
 }

@@ -80,6 +80,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btonEditar
             // 
@@ -93,6 +94,7 @@
             this.btonEditar.TabIndex = 4;
             this.btonEditar.Text = "Editar";
             this.btonEditar.UseVisualStyleBackColor = false;
+            this.btonEditar.Click += new System.EventHandler(this.btonEditar_Click);
             // 
             // btonNMedico
             // 

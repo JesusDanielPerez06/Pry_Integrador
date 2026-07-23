@@ -14,44 +14,102 @@ namespace pry_integrador
 {
     public partial class Login : Form
     {
+        private PruebaDataAcces conect;
+
         public Login()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = PruebaDataAcces.ObtenerConexion();
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                MessageBox.Show(
+                    "Ingresa tu nombre de usuario.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtUsuario.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                MessageBox.Show(
+                    "Ingresa tu contraseña.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtContraseña.Focus();
+                return;
+            }
+
+            conect = new PruebaDataAcces();
+            MySqlConnection conex = conect.GetConnection();
 
             try
             {
-                connection.Open();
-                string query = "SELECT * FROM usuarios WHERE usuario = @usuario AND contraseña = @contraseña";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                
+
+                string query = "SELECT id_usuario FROM usuario " +
+                               "WHERE usuario = @usuario AND contraseña = @contraseña";
+
+                MySqlCommand command = new MySqlCommand(query, conex);
+
+                command.Parameters.AddWithValue("@usuario", txtUsuario.Text.Trim());
                 command.Parameters.AddWithValue("@contraseña", txtContraseña.Text);
+
                 MySqlDataReader reader = command.ExecuteReader();
+
                 if (reader.HasRows)
                 {
-                    MessageBox.Show("Inicio de sesión exitoso");
+                    reader.Close();
+
+                    MessageBox.Show(
+                        "Inicio de sesión exitoso.",
+                        "Acceso permitido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
                     FormPrincipal menu = new FormPrincipal();
+
+                    menu.FormClosed += (s, args) => this.Close();
+
                     menu.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    reader.Close();
+
+                    MessageBox.Show(
+                        "Usuario o contraseña incorrectos.",
+                        "Acceso denegado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    txtContraseña.Clear();
+                    txtContraseña.Focus();
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
+                MessageBox.Show(
+                    "Ocurrió un error al iniciar sesión: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             finally
             {
-                connection.Close();
+                if (conex.State == ConnectionState.Open)
+                {
+                    conex.Close();
+                }
             }
 
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
@@ -100,5 +158,10 @@ namespace pry_integrador
             txtContraseña.Clear();
             txtUsuario.Focus();
         }
+
+
+
+
+
     }
 }

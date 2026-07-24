@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx;
 using pry_integrador.Pruebas;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,11 @@ namespace pry_integrador.Medicos.Registro_de_medicos
             string telefono,
             string correo,
             string cedula,
-            string especialdad)
+            string especialidad)
         {
+            InitializeComponent();
 
             idMedico = id;
-
 
             textNombreM.Text = nombre;
             textApellidoP.Text = apellidoPaterno;
@@ -37,9 +38,9 @@ namespace pry_integrador.Medicos.Registro_de_medicos
             textTelefono.Text = telefono;
             textMail.Text = correo;
             textCedula.Text = cedula;
-            comboEspecialidad.Text = especialdad;
+            comboEspecialidad.Text = especialidad;
              
-            InitializeComponent();
+            
         }
 
 
@@ -123,7 +124,7 @@ namespace pry_integrador.Medicos.Registro_de_medicos
 
             }
 
-            if (comboEspecialidad.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(comboEspecialidad.Text))
             {
                 MessageBox.Show(
                     "Seleccione una especialidad.",
@@ -138,17 +139,19 @@ namespace pry_integrador.Medicos.Registro_de_medicos
             conect = new PruebaDataAcces();
             MySqlConnection conex = conect.GetConnection();
 
-            string consulta = "UPDATE medicos SET" +
-                "(nombre = @nombre, " +
+            string consulta = "UPDATE medicos SET " +
+                "nombre = @nombre, " +
                 "apellido_paterno = @apellidoPaterno, " +
                 "apellido_materno = @apellidoMaterno, " +
                 "telefono = @telefono, " +
                 "correo_electronico = @correo, " +
                 "cedula = @cedula, " +
-                "especialidad = @especialidad)";
-                
+                "especialidad = @especialidad " +
+                "WHERE id_medico = @idMedico";
+
 
             MySqlCommand comando = new MySqlCommand(consulta, conex);
+            
             comando.Parameters.AddWithValue("@nombre", textNombreM.Text);
             comando.Parameters.AddWithValue("@apellidoPaterno", textApellidoP.Text);
             comando.Parameters.AddWithValue("@apellidoMaterno", textApellidoM.Text);
@@ -161,14 +164,13 @@ namespace pry_integrador.Medicos.Registro_de_medicos
             comando.ExecuteNonQuery();
             conex.Close();
 
+
             MessageBox.Show(
-                "Registro Exitoso.",
-                "Registro",
+                "Datos actualizados correctamente.",
+                "Editar Medico",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
-
-            MessageBox.Show("Datos actualizados correctamente.");
+            
             Close();
 
         }

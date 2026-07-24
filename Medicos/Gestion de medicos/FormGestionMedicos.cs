@@ -87,12 +87,63 @@ namespace pry_integrador.Medicos.Gestion_de_medicos
 
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
+            CargarMedicos();
 
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dgvMedicos.CurrentRow == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un médico.",
+                    "Eliminar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            int idMedico = Convert.ToInt32(
+                dgvMedicos.CurrentRow.Cells["id_medico"].Value);
+
+            string nombre = dgvMedicos.CurrentRow.Cells["nombre"].Value.ToString();
+            string apellidoPaterno = dgvMedicos.CurrentRow.Cells["apellido_paterno"].Value.ToString();
+
+            DialogResult respuesta = MessageBox.Show(
+                "¿Está seguro de eliminar al médico " +
+                nombre + " " + apellidoPaterno + "?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+            PruebaDataAcces conect = new PruebaDataAcces();
+            MySqlConnection conex = conect.GetConnection();
+
+
+            string consulta = "DELETE FROM Medicos " +
+                              "WHERE id_medico = @idMedico";
+
+            MySqlCommand comando = new MySqlCommand(consulta, conex);
+
+            comando.Parameters.AddWithValue("@idMedico", idMedico);
+
+            comando.ExecuteNonQuery();
+            conex.Close();
+
+            MessageBox.Show(
+                "Médico eliminado correctamente.",
+                "Eliminar médico",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            CargarMedicos();
 
         }
     }

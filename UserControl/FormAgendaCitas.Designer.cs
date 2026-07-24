@@ -53,12 +53,15 @@
             this.dtpCita = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cboMedico = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_reagendar = new System.Windows.Forms.Button();
+            this.btn_cancelar_cita = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +116,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(242, 22);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
             // 
@@ -225,7 +229,7 @@
             // 
             this.btn_agregar.BackColor = System.Drawing.Color.Chartreuse;
             this.btn_agregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(215, 652);
+            this.btn_agregar.Location = new System.Drawing.Point(222, 652);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(97, 35);
             this.btn_agregar.TabIndex = 19;
@@ -295,25 +299,13 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Chartreuse;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1154, 596);
+            this.button3.Location = new System.Drawing.Point(1215, 596);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 32);
             this.button3.TabIndex = 27;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(1273, 596);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 32);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
@@ -354,6 +346,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(275, 253);
             this.txtDireccion.TabIndex = 32;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // dataGridView1
             // 
@@ -364,6 +357,57 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(503, 213);
             this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.BackColor = System.Drawing.Color.Chartreuse;
+            this.btn_editar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.Location = new System.Drawing.Point(118, 652);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(91, 35);
+            this.btn_editar.TabIndex = 34;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.BackColor = System.Drawing.Color.Red;
+            this.btn_eliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_eliminar.Location = new System.Drawing.Point(417, 652);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(90, 35);
+            this.btn_eliminar.TabIndex = 35;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_reagendar
+            // 
+            this.btn_reagendar.BackColor = System.Drawing.Color.Chartreuse;
+            this.btn_reagendar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reagendar.Location = new System.Drawing.Point(1111, 596);
+            this.btn_reagendar.Name = "btn_reagendar";
+            this.btn_reagendar.Size = new System.Drawing.Size(98, 32);
+            this.btn_reagendar.TabIndex = 36;
+            this.btn_reagendar.Text = "Reagendar";
+            this.btn_reagendar.UseVisualStyleBackColor = false;
+            this.btn_reagendar.Click += new System.EventHandler(this.btn_reagendar_Click);
+            // 
+            // btn_cancelar_cita
+            // 
+            this.btn_cancelar_cita.BackColor = System.Drawing.Color.Red;
+            this.btn_cancelar_cita.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar_cita.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_cancelar_cita.Location = new System.Drawing.Point(1316, 586);
+            this.btn_cancelar_cita.Name = "btn_cancelar_cita";
+            this.btn_cancelar_cita.Size = new System.Drawing.Size(90, 52);
+            this.btn_cancelar_cita.TabIndex = 37;
+            this.btn_cancelar_cita.Text = "Cancelar Cita";
+            this.btn_cancelar_cita.UseVisualStyleBackColor = false;
+            this.btn_cancelar_cita.Click += new System.EventHandler(this.btn_cancelar_cita_Click);
             // 
             // FormAgendaCitas
             // 
@@ -371,12 +415,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1610, 770);
+            this.Controls.Add(this.btn_cancelar_cita);
+            this.Controls.Add(this.btn_reagendar);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.cboMedico);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpCita);
@@ -439,11 +486,14 @@
         private System.Windows.Forms.DateTimePicker dtpCita;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboMedico;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_reagendar;
+        private System.Windows.Forms.Button btn_cancelar_cita;
     }
 }

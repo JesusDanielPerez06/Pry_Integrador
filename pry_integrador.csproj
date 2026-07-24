@@ -161,6 +161,12 @@
     <Compile Include="Registro de Pacientes\FormHistorialMedico.Designer.cs">
       <DependentUpon>FormHistorialMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registro de Pacientes\PacienteUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro de Pacientes\PacienteUC.Designer.cs">
+      <DependentUpon>PacienteUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\CONEXION.cs" />
     <Compile Include="UserControl\FormAgendaCitas.cs">
       <SubType>Form</SubType>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro de Pacientes\FormHistorialMedico.resx">
       <DependentUpon>FormHistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro de Pacientes\PacienteUC.resx">
+      <DependentUpon>PacienteUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\FormAgendaCitas.resx">
       <DependentUpon>FormAgendaCitas.cs</DependentUpon>

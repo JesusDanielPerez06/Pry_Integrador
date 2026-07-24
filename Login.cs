@@ -24,11 +24,12 @@ namespace pry_integrador
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+           
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
                 MessageBox.Show(
-                    "Ingresa tu nombre de usuario.",
-                    "Validación",
+                    "El nombre de usuario es obligatorio.",
+                    "Validacion",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 
@@ -39,8 +40,8 @@ namespace pry_integrador
             if (string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
                 MessageBox.Show(
-                    "Ingresa tu contraseña.",
-                    "Validación",
+                    "La contraseña es obligatoria.",
+                    "Validacion",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 
@@ -48,7 +49,19 @@ namespace pry_integrador
                 return;
             }
 
-            conect = new PruebaDataAcces();
+            if (txtContraseña.Text.Length < 8)
+            {
+                MessageBox.Show(
+                    "La contraseña debe tener al menos 8 caracteres.",
+                    "Validacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtContraseña.Focus();
+                return;
+            }
+
+                conect = new PruebaDataAcces();
             MySqlConnection conex = conect.GetConnection();
 
             try
@@ -74,13 +87,7 @@ namespace pry_integrador
                         "Acceso permitido",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-
-                    FormPrincipal menu = new FormPrincipal();
-
-                    menu.FormClosed += (s, args) => this.Close();
-
-                    menu.Show();
-                    this.Hide();
+ 
                 }
                 else
                 {
@@ -112,42 +119,32 @@ namespace pry_integrador
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
-            {
-                MessageBox.Show(
-                    "El nombre de usuario es obligatorio.",
-                    "Validacion",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                if (reader.HasRows)
+                {
+                    if (chkRecordarme.Checked)
+                    {
+                        Properties.Settings.Default.Usuario = txtUsuario.Text;
+                        Properties.Settings.Default.Contraseña = txtContraseña.Text;
+                        Properties.Settings.Default.Recordar = true;
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.Usuario = "";
+                        Properties.Settings.Default.Contraseña = "";
+                        Properties.Settings.Default.Recordar = false;
+                    }
+                    Properties.Settings.Default.Save();
 
-                // Enfocar el campo para que el usuario corrija
-                txtUsuario.Focus();
-                return;
-            }
+                    MessageBox.Show("Inicio de sesión exitoso");
+                   
+                    FormPrincipal menu = new FormPrincipal();
 
-            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
-            {
-                MessageBox.Show(
-                    "La contraseña es obligatoria.",
-                    "Validacion",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    menu.FormClosed += (s, args) => this.Close();
 
-                txtContraseña.Focus();
-                return;
-            }
-
-            if (txtContraseña.Text.Length < 8)
-            {
-                MessageBox.Show(
-                    "La contraseña debe tener al menos 8 caracteres.",
-                    "Validacion",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                txtContraseña.Focus();
-                return;
-            }
+                    menu.Show();
+                    this.Hide();
+                }
+            
 
             LimpiarFormulario();
         }
@@ -158,10 +155,5 @@ namespace pry_integrador
             txtContraseña.Clear();
             txtUsuario.Focus();
         }
-
-
-
-
-
     }
 }

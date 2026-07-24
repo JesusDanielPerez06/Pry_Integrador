@@ -16,5 +16,15 @@ namespace pry_integrador.UserControl
         {
             InitializeComponent();
         }
+
+        private void btonSi_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void btonCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

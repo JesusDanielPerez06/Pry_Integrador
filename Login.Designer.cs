@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkRecordarme = new System.Windows.Forms.CheckBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             // 
             this.panel1.Controls.Add(this.btnAcceder);
             this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.chkRecordarme);
             this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -80,16 +80,16 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Olvidaste tu contraseña?";
             // 
-            // checkBox1
+            // chkRecordarme
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(60, 179);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(103, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "RECORDARME";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkRecordarme.AutoSize = true;
+            this.chkRecordarme.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRecordarme.Location = new System.Drawing.Point(60, 179);
+            this.chkRecordarme.Name = "chkRecordarme";
+            this.chkRecordarme.Size = new System.Drawing.Size(103, 17);
+            this.chkRecordarme.TabIndex = 6;
+            this.chkRecordarme.Text = "RECORDARME";
+            this.chkRecordarme.UseVisualStyleBackColor = true;
             // 
             // txtContraseña
             // 
@@ -170,7 +170,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkRecordarme;
         private System.Windows.Forms.Button btnAcceder;
     }
 }

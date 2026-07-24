@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionMedicos));
             this.pnelSup = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btonEliminar = new System.Windows.Forms.Button();
             this.btonEditar = new System.Windows.Forms.Button();
             this.btonNMedico = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,7 +56,7 @@
             // 
             this.pnelSup.AutoScroll = true;
             this.pnelSup.BackColor = System.Drawing.Color.White;
-            this.pnelSup.Controls.Add(this.button2);
+            this.pnelSup.Controls.Add(this.btonEliminar);
             this.pnelSup.Controls.Add(this.btonEditar);
             this.pnelSup.Controls.Add(this.btonNMedico);
             this.pnelSup.Controls.Add(this.pictureBox1);
@@ -68,19 +68,19 @@
             this.pnelSup.Size = new System.Drawing.Size(1606, 90);
             this.pnelSup.TabIndex = 0;
             // 
-            // button2
+            // btonEliminar
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(888, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btonEliminar.AutoSize = true;
+            this.btonEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
+            this.btonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btonEliminar.ForeColor = System.Drawing.Color.White;
+            this.btonEliminar.Location = new System.Drawing.Point(888, 39);
+            this.btonEliminar.Name = "btonEliminar";
+            this.btonEliminar.Size = new System.Drawing.Size(119, 32);
+            this.btonEliminar.TabIndex = 4;
+            this.btonEliminar.Text = "Eliminar";
+            this.btonEliminar.UseVisualStyleBackColor = false;
+            this.btonEliminar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btonEditar
             // 
@@ -269,7 +269,7 @@
         private System.Windows.Forms.Button btonNMedico;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnelContenido;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btonEliminar;
         private System.Windows.Forms.Button btonEditar;
         private System.Windows.Forms.DataGridView dgvMedicos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_medico;

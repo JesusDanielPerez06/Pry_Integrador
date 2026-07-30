@@ -129,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.ForeColor = System.Drawing.Color.LightBlue;
             this.label1.Location = new System.Drawing.Point(86, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 75);
@@ -140,7 +140,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightBlue;
             this.label2.Location = new System.Drawing.Point(1669, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 50);
@@ -260,6 +262,7 @@
             this.btn_reportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_reportes.TabIndex = 6;
             this.btn_reportes.TabStop = false;
+            this.btn_reportes.Click += new System.EventHandler(this.btn_reportes_Click);
             this.btn_reportes.MouseLeave += new System.EventHandler(this.btn_reportes_MouseLeave);
             this.btn_reportes.MouseHover += new System.EventHandler(this.btn_reportes_MouseHover);
             // 

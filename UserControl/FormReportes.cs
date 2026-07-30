@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace pry_integrador.UserControl
 {
-    public partial class FormHelp : Form
+    public partial class FormReportes : Form
     {
-        public FormHelp()
+        public FormReportes()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

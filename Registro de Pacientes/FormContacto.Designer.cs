@@ -61,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.BtonAnterior);
             this.groupBox1.Controls.Add(this.BtonSiguiente);
             this.groupBox1.Controls.Add(this.Indicador2);

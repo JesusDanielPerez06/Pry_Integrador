@@ -490,5 +490,15 @@ namespace pry_integrador.UserControl
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

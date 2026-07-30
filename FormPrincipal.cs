@@ -206,5 +206,12 @@ namespace pry_integrador
             formCerrar.StartPosition = FormStartPosition.CenterScreen;
             formCerrar.ShowDialog();
         }
+
+        private void btn_reportes_Click(object sender, EventArgs e)
+        {
+            FormReportes FormReportes = new FormReportes();
+            FormReportes.StartPosition = FormStartPosition.CenterScreen;
+            FormReportes.ShowDialog();
+        }
     }
 }

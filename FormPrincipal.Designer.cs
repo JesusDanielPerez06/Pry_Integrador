@@ -275,6 +275,7 @@
             this.btn_especialidades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_especialidades.TabIndex = 5;
             this.btn_especialidades.TabStop = false;
+            this.btn_especialidades.Click += new System.EventHandler(this.btn_especialidades_Click);
             this.btn_especialidades.MouseLeave += new System.EventHandler(this.btn_especialidades_MouseLeave);
             this.btn_especialidades.MouseHover += new System.EventHandler(this.btn_especialidades_MouseHover);
             // 
@@ -287,6 +288,7 @@
             this.btn_consultorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_consultorios.TabIndex = 4;
             this.btn_consultorios.TabStop = false;
+            this.btn_consultorios.Click += new System.EventHandler(this.btn_consultorios_Click);
             this.btn_consultorios.MouseLeave += new System.EventHandler(this.btn_consultorios_MouseLeave);
             this.btn_consultorios.MouseHover += new System.EventHandler(this.btn_consultorios_MouseHover);
             // 

@@ -73,6 +73,14 @@
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cboHoraInicio = new System.Windows.Forms.ComboBox();
+            this.cboHoraFin = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cboDuracion = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -292,16 +300,16 @@
             // 
             // dtpCita
             // 
-            this.dtpCita.Location = new System.Drawing.Point(978, 481);
+            this.dtpCita.Location = new System.Drawing.Point(978, 428);
             this.dtpCita.Name = "dtpCita";
-            this.dtpCita.Size = new System.Drawing.Size(200, 22);
+            this.dtpCita.Size = new System.Drawing.Size(220, 22);
             this.dtpCita.TabIndex = 25;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(974, 458);
+            this.label12.Location = new System.Drawing.Point(974, 405);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 20);
             this.label12.TabIndex = 26;
@@ -311,7 +319,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Chartreuse;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1215, 596);
+            this.button3.Location = new System.Drawing.Point(1204, 667);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 32);
             this.button3.TabIndex = 27;
@@ -338,7 +346,7 @@
             "Dr. Carlos Gomez"});
             this.cboMedico.Location = new System.Drawing.Point(1287, 369);
             this.cboMedico.Name = "cboMedico";
-            this.cboMedico.Size = new System.Drawing.Size(212, 24);
+            this.cboMedico.Size = new System.Drawing.Size(220, 24);
             this.cboMedico.TabIndex = 30;
             // 
             // label14
@@ -392,7 +400,7 @@
             // 
             this.btn_reagendar.BackColor = System.Drawing.Color.Chartreuse;
             this.btn_reagendar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reagendar.Location = new System.Drawing.Point(1111, 596);
+            this.btn_reagendar.Location = new System.Drawing.Point(1100, 667);
             this.btn_reagendar.Name = "btn_reagendar";
             this.btn_reagendar.Size = new System.Drawing.Size(98, 32);
             this.btn_reagendar.TabIndex = 36;
@@ -405,7 +413,7 @@
             this.btn_cancelar_cita.BackColor = System.Drawing.Color.Red;
             this.btn_cancelar_cita.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar_cita.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_cancelar_cita.Location = new System.Drawing.Point(1316, 586);
+            this.btn_cancelar_cita.Location = new System.Drawing.Point(1305, 657);
             this.btn_cancelar_cita.Name = "btn_cancelar_cita";
             this.btn_cancelar_cita.Size = new System.Drawing.Size(90, 52);
             this.btn_cancelar_cita.TabIndex = 37;
@@ -451,11 +459,11 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(646, 121);
+            this.label17.Location = new System.Drawing.Point(646, 276);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 20);
+            this.label17.Size = new System.Drawing.Size(107, 20);
             this.label17.TabIndex = 44;
-            this.label17.Text = "Calle:";
+            this.label17.Text = "Codigo postal:";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // txtEstado
@@ -470,17 +478,17 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(646, 203);
+            this.label18.Location = new System.Drawing.Point(646, 124);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.Size = new System.Drawing.Size(61, 20);
             this.label18.TabIndex = 45;
-            this.label18.Text = "Colonia:";
+            this.label18.Text = "Ciudad:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(646, 278);
+            this.label19.Location = new System.Drawing.Point(646, 203);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(58, 20);
             this.label19.TabIndex = 46;
@@ -520,12 +528,92 @@
             this.txtReferencia.Size = new System.Drawing.Size(275, 165);
             this.txtReferencia.TabIndex = 50;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(974, 463);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(109, 20);
+            this.label21.TabIndex = 51;
+            this.label21.Text = "Hora de Inicio:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(974, 514);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 20);
+            this.label22.TabIndex = 52;
+            this.label22.Text = "Hora Fin:";
+            // 
+            // cboHoraInicio
+            // 
+            this.cboHoraInicio.FormattingEnabled = true;
+            this.cboHoraInicio.Location = new System.Drawing.Point(978, 486);
+            this.cboHoraInicio.Name = "cboHoraInicio";
+            this.cboHoraInicio.Size = new System.Drawing.Size(220, 24);
+            this.cboHoraInicio.TabIndex = 53;
+            // 
+            // cboHoraFin
+            // 
+            this.cboHoraFin.FormattingEnabled = true;
+            this.cboHoraFin.Location = new System.Drawing.Point(978, 537);
+            this.cboHoraFin.Name = "cboHoraFin";
+            this.cboHoraFin.Size = new System.Drawing.Size(220, 24);
+            this.cboHoraFin.TabIndex = 54;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(1283, 405);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(76, 20);
+            this.label23.TabIndex = 55;
+            this.label23.Text = "Duracion:";
+            // 
+            // cboDuracion
+            // 
+            this.cboDuracion.FormattingEnabled = true;
+            this.cboDuracion.Location = new System.Drawing.Point(1287, 426);
+            this.cboDuracion.Name = "cboDuracion";
+            this.cboDuracion.Size = new System.Drawing.Size(220, 24);
+            this.cboDuracion.TabIndex = 56;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(1283, 463);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(62, 20);
+            this.label24.TabIndex = 57;
+            this.label24.Text = "Motivo:";
+            // 
+            // txtMotivo
+            // 
+            this.txtMotivo.Location = new System.Drawing.Point(1287, 488);
+            this.txtMotivo.Multiline = true;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(225, 145);
+            this.txtMotivo.TabIndex = 58;
+            // 
             // FormAgendaCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1610, 770);
+            this.Controls.Add(this.txtMotivo);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.cboDuracion);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.cboHoraFin);
+            this.Controls.Add(this.cboHoraInicio);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.txtReferencia);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.txtCalle);
@@ -628,5 +716,13 @@
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtReferencia;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cboHoraInicio;
+        private System.Windows.Forms.ComboBox cboHoraFin;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cboDuracion;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtMotivo;
     }
 }

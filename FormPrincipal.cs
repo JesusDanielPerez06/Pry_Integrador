@@ -213,5 +213,15 @@ namespace pry_integrador
             FormReportes.StartPosition = FormStartPosition.CenterScreen;
             FormReportes.ShowDialog();
         }
+
+        private void btn_consultorios_Click(object sender, EventArgs e)
+        {
+            CargarVista(new FormConsultorios());
+        }
+
+        private void btn_especialidades_Click(object sender, EventArgs e)
+        {
+            CargarVista(new FormEspecialidad());
+        }
     }
 }

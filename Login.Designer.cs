@@ -38,12 +38,16 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.btnAcceder);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.chkRecordarme);
@@ -56,7 +60,7 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 260);
+            this.panel1.Size = new System.Drawing.Size(400, 326);
             this.panel1.TabIndex = 0;
             // 
             // btnAcceder
@@ -64,7 +68,7 @@
             this.btnAcceder.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAcceder.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcceder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAcceder.Location = new System.Drawing.Point(58, 212);
+            this.btnAcceder.Location = new System.Drawing.Point(58, 274);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(307, 36);
             this.btnAcceder.TabIndex = 8;
@@ -76,9 +80,9 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(201, 178);
+            this.linkLabel1.Location = new System.Drawing.Point(202, 256);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(164, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(141, 15);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Olvidaste tu contraseña?";
@@ -87,7 +91,7 @@
             // 
             this.chkRecordarme.AutoSize = true;
             this.chkRecordarme.Font = new System.Drawing.Font("Segoe UI Semibold", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRecordarme.Location = new System.Drawing.Point(60, 179);
+            this.chkRecordarme.Location = new System.Drawing.Point(60, 256);
             this.chkRecordarme.Name = "chkRecordarme";
             this.chkRecordarme.Size = new System.Drawing.Size(92, 17);
             this.chkRecordarme.TabIndex = 6;
@@ -96,7 +100,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(58, 146);
+            this.txtContraseña.Location = new System.Drawing.Point(58, 209);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(307, 25);
             this.txtContraseña.TabIndex = 5;
@@ -106,7 +110,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 127);
+            this.label4.Location = new System.Drawing.Point(55, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 15);
             this.label4.TabIndex = 4;
@@ -116,15 +120,15 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 71);
+            this.label3.Location = new System.Drawing.Point(57, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "USUARIO";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(60, 90);
+            this.txtUsuario.Location = new System.Drawing.Point(58, 163);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(307, 25);
             this.txtUsuario.TabIndex = 2;
@@ -150,12 +154,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "INICIAR SESION";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(58, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(307, 25);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(57, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "USUARIO";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(424, 284);
+            this.ClientSize = new System.Drawing.Size(424, 350);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Agenda Citas - Inicio Sesion ";
@@ -177,5 +199,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox chkRecordarme;
         private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -50,7 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cboConsultorio = new System.Windows.Forms.ComboBox();
-            this.dtpCita = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaCita = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,11 +66,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtColonia = new System.Windows.Forms.TextBox();
-            this.txtCalle = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -298,12 +298,12 @@
             this.cboConsultorio.Size = new System.Drawing.Size(220, 24);
             this.cboConsultorio.TabIndex = 24;
             // 
-            // dtpCita
+            // dtpFechaCita
             // 
-            this.dtpCita.Location = new System.Drawing.Point(978, 428);
-            this.dtpCita.Name = "dtpCita";
-            this.dtpCita.Size = new System.Drawing.Size(220, 22);
-            this.dtpCita.TabIndex = 25;
+            this.dtpFechaCita.Location = new System.Drawing.Point(978, 428);
+            this.dtpFechaCita.Name = "dtpFechaCita";
+            this.dtpFechaCita.Size = new System.Drawing.Size(220, 22);
+            this.dtpFechaCita.TabIndex = 25;
             // 
             // label12
             // 
@@ -466,13 +466,13 @@
             this.label17.Text = "Codigo postal:";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
-            // txtEstado
+            // txtCodigoPostal
             // 
-            this.txtEstado.Location = new System.Drawing.Point(650, 301);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(275, 30);
-            this.txtEstado.TabIndex = 42;
+            this.txtCodigoPostal.Location = new System.Drawing.Point(650, 301);
+            this.txtCodigoPostal.Multiline = true;
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(275, 30);
+            this.txtCodigoPostal.TabIndex = 42;
             // 
             // label18
             // 
@@ -494,21 +494,21 @@
             this.label19.TabIndex = 46;
             this.label19.Text = "Estado:";
             // 
-            // txtColonia
+            // txtEstado
             // 
-            this.txtColonia.Location = new System.Drawing.Point(650, 226);
-            this.txtColonia.Multiline = true;
-            this.txtColonia.Name = "txtColonia";
-            this.txtColonia.Size = new System.Drawing.Size(275, 30);
-            this.txtColonia.TabIndex = 47;
+            this.txtEstado.Location = new System.Drawing.Point(650, 226);
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(275, 30);
+            this.txtEstado.TabIndex = 47;
             // 
-            // txtCalle
+            // txtCiudad
             // 
-            this.txtCalle.Location = new System.Drawing.Point(650, 147);
-            this.txtCalle.Multiline = true;
-            this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(275, 30);
-            this.txtCalle.TabIndex = 48;
+            this.txtCiudad.Location = new System.Drawing.Point(650, 147);
+            this.txtCiudad.Multiline = true;
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(275, 30);
+            this.txtCiudad.TabIndex = 48;
             // 
             // label20
             // 
@@ -616,12 +616,12 @@
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txtReferencia);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.txtCalle);
-            this.Controls.Add(this.txtColonia);
+            this.Controls.Add(this.txtCiudad);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.txtCodigoPostal);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtAM);
@@ -636,7 +636,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dtpCita);
+            this.Controls.Add(this.dtpFechaCita);
             this.Controls.Add(this.cboConsultorio);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -693,7 +693,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cboConsultorio;
-        private System.Windows.Forms.DateTimePicker dtpCita;
+        private System.Windows.Forms.DateTimePicker dtpFechaCita;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
@@ -709,11 +709,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtColonia;
-        private System.Windows.Forms.TextBox txtCalle;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Label label21;

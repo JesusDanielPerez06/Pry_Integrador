@@ -7,7 +7,7 @@ namespace pry_integrador
     {
         private string cadenaConexion =
             "Server=localhost;" +
-            "Database=AgendaMedica;" +
+            "Database=mediagenda;" +
             "Uid=root;" +
             "Pwd=;" +
             "Port=3306;";

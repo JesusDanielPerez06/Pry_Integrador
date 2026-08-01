@@ -14,7 +14,7 @@ namespace pry_integrador.Pruebas
 
         public PruebaDataAcces()
         {
-            cadena = "server = localhost; Database = pruebas; Uid = root; port = 3306";
+            cadena = "server = localhost; Database = mediagenda; Uid = root; port = 3306";
         }
 
         internal static MySqlConnection ObtenerConexion()

@@ -53,6 +53,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btonEditar
             // 
@@ -67,6 +68,7 @@
             this.btonEditar.TabIndex = 10;
             this.btonEditar.Text = "Editar";
             this.btonEditar.UseVisualStyleBackColor = false;
+            this.btonEditar.Click += new System.EventHandler(this.btonEditar_Click);
             // 
             // btonNMedico
             // 
@@ -74,13 +76,14 @@
             this.btonNMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
             this.btonNMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btonNMedico.ForeColor = System.Drawing.Color.White;
-            this.btonNMedico.Location = new System.Drawing.Point(541, 33);
+            this.btonNMedico.Location = new System.Drawing.Point(541, 32);
             this.btonNMedico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btonNMedico.Name = "btonNMedico";
             this.btonNMedico.Size = new System.Drawing.Size(115, 28);
             this.btonNMedico.TabIndex = 8;
             this.btonNMedico.Text = "Nuevo Paciente";
             this.btonNMedico.UseVisualStyleBackColor = false;
+            this.btonNMedico.Click += new System.EventHandler(this.btonNMedico_Click);
             // 
             // textBox1
             // 
@@ -103,7 +106,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(12, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;

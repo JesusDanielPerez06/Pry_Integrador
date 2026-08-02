@@ -30,48 +30,48 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDatosPersonales));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtAM = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCurp = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtonSiguiente = new System.Windows.Forms.Button();
             this.Indicador = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
             this.EstadoCivil = new System.Windows.Forms.Label();
             this.textNacionalidad = new System.Windows.Forms.TextBox();
             this.Nacionalidad = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
             this.Genero = new System.Windows.Forms.Label();
             this.FechaN = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAP = new System.Windows.Forms.TextBox();
             this.Apellidos = new System.Windows.Forms.Label();
             this.textNombreS = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Descripcion = new System.Windows.Forms.Label();
             this.Titulo1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
+            this.groupBox1.Controls.Add(this.txtAM);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCurp);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BtonSiguiente);
             this.groupBox1.Controls.Add(this.Indicador);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cboEstadoCivil);
             this.groupBox1.Controls.Add(this.EstadoCivil);
             this.groupBox1.Controls.Add(this.textNacionalidad);
             this.groupBox1.Controls.Add(this.Nacionalidad);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboGenero);
             this.groupBox1.Controls.Add(this.Genero);
             this.groupBox1.Controls.Add(this.FechaN);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtAP);
             this.groupBox1.Controls.Add(this.Apellidos);
             this.groupBox1.Controls.Add(this.textNombreS);
             this.groupBox1.Controls.Add(this.Nombre);
@@ -85,6 +85,49 @@
             this.groupBox1.Size = new System.Drawing.Size(690, 433);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(115, 207);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(124, 22);
+            this.dtpFechaNacimiento.TabIndex = 21;
+            // 
+            // txtAM
+            // 
+            this.txtAM.Location = new System.Drawing.Point(412, 206);
+            this.txtAM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAM.Name = "txtAM";
+            this.txtAM.Size = new System.Drawing.Size(124, 22);
+            this.txtAM.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            this.label2.Location = new System.Drawing.Point(415, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Apellido Materno:";
+            // 
+            // txtCurp
+            // 
+            this.txtCurp.Location = new System.Drawing.Point(115, 310);
+            this.txtCurp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCurp.Name = "txtCurp";
+            this.txtCurp.Size = new System.Drawing.Size(124, 22);
+            this.txtCurp.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            this.label1.Location = new System.Drawing.Point(120, 291);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "CURP:";
             // 
             // BtonSiguiente
             // 
@@ -109,18 +152,18 @@
             this.Indicador.TabIndex = 15;
             this.Indicador.Text = "Paso 1 de 3";
             // 
-            // comboBox2
+            // cboEstadoCivil
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cboEstadoCivil.FormattingEnabled = true;
+            this.cboEstadoCivil.Items.AddRange(new object[] {
             "Soltero(a)",
             "Casado(a)",
             "Viudo(a)"});
-            this.comboBox2.Location = new System.Drawing.Point(412, 308);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(124, 24);
-            this.comboBox2.TabIndex = 14;
+            this.cboEstadoCivil.Location = new System.Drawing.Point(412, 308);
+            this.cboEstadoCivil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboEstadoCivil.Name = "cboEstadoCivil";
+            this.cboEstadoCivil.Size = new System.Drawing.Size(124, 24);
+            this.cboEstadoCivil.TabIndex = 14;
             // 
             // EstadoCivil
             // 
@@ -150,19 +193,19 @@
             this.Nacionalidad.TabIndex = 11;
             this.Nacionalidad.Text = "Nacionalidad";
             // 
-            // comboBox1
+            // cboGenero
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino",
             "Otro",
             "No especifica"});
-            this.comboBox1.Location = new System.Drawing.Point(412, 257);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 24);
-            this.comboBox1.TabIndex = 10;
+            this.cboGenero.Location = new System.Drawing.Point(412, 257);
+            this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(124, 24);
+            this.cboGenero.TabIndex = 10;
             // 
             // Genero
             // 
@@ -184,13 +227,13 @@
             this.FechaN.TabIndex = 7;
             this.FechaN.Text = "Fecha de Nacimiento";
             // 
-            // textBox2
+            // txtAP
             // 
-            this.textBox2.Location = new System.Drawing.Point(412, 154);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 22);
-            this.textBox2.TabIndex = 6;
+            this.txtAP.Location = new System.Drawing.Point(412, 154);
+            this.txtAP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAP.Name = "txtAP";
+            this.txtAP.Size = new System.Drawing.Size(124, 22);
+            this.txtAP.TabIndex = 6;
             // 
             // Apellidos
             // 
@@ -253,49 +296,6 @@
             this.Titulo1.TabIndex = 0;
             this.Titulo1.Text = "Datos Personales";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            this.label1.Location = new System.Drawing.Point(120, 291);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "CURP:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(115, 310);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 22);
-            this.textBox1.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            this.label2.Location = new System.Drawing.Point(415, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 16);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Apellido Materno:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(412, 206);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 22);
-            this.textBox4.TabIndex = 20;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 207);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(124, 22);
-            this.dateTimePicker1.TabIndex = 21;
-            // 
             // FormDatosPersonales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,20 +322,20 @@
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label Apellidos;
         private System.Windows.Forms.TextBox textNombreS;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAP;
         private System.Windows.Forms.Label FechaN;
         private System.Windows.Forms.Label Genero;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboGenero;
+        private System.Windows.Forms.ComboBox cboEstadoCivil;
         private System.Windows.Forms.Label EstadoCivil;
         private System.Windows.Forms.TextBox textNacionalidad;
         private System.Windows.Forms.Label Nacionalidad;
         private System.Windows.Forms.Button BtonSiguiente;
         private System.Windows.Forms.Label Indicador;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCurp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.TextBox txtAM;
         private System.Windows.Forms.Label label2;
     }
 }

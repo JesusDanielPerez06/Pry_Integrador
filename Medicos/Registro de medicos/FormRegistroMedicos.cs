@@ -1,147 +1,104 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using pry_integrador.Pruebas;
 
 namespace pry_integrador.Medicos.Registro_de_medicos
 {
     public partial class FormRegistroMedicos : Form
     {
-        private PruebaDataAcces conect;
+        string connectionString = "Server=localhost; Database=mediagenda; Uid=root; Pwd=;";
+
         public FormRegistroMedicos()
         {
             InitializeComponent();
+
+            textNombreM.CharacterCasing = CharacterCasing.Upper;
+            textApellidoP.CharacterCasing = CharacterCasing.Upper;
+            textApellidoM.CharacterCasing = CharacterCasing.Upper;
+            textTelefono.CharacterCasing = CharacterCasing.Upper;
+            textMail.CharacterCasing = CharacterCasing.Upper;
+            textCedula.CharacterCasing = CharacterCasing.Upper;
+
+            this.Load += new EventHandler(FormRegistroMedicos_Load);
+        }
+
+        private void FormRegistroMedicos_Load(object sender, EventArgs e)
+        {
+            CargarEspecialidadesEnCombo();
+        }
+
+        private void CargarEspecialidadesEnCombo()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT idEspecialidad, nombre FROM especialidades";
+                    MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    comboEspecialidad.DataSource = dt;
+                    comboEspecialidad.DisplayMember = "nombre"; 
+                    comboEspecialidad.ValueMember = "idEspecialidad"; 
+                    comboEspecialidad.SelectedIndex = -1; 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar especialidades: " + ex.Message);
+                }
+            }
         }
 
         private void btonRegistrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textNombreM.Text)) { MostrarAdvertencia("Campo Nombre obligatorio.", textNombreM); return; }
+            if (string.IsNullOrWhiteSpace(textApellidoP.Text)) { MostrarAdvertencia("Campo Apellido Paterno obligatorio.", textApellidoP); return; }
+            if (string.IsNullOrWhiteSpace(textApellidoM.Text)) { MostrarAdvertencia("Campo Apellido Materno obligatorio.", textApellidoM); return; }
+            if (string.IsNullOrWhiteSpace(textTelefono.Text)) { MostrarAdvertencia("Campo Teléfono obligatorio.", textTelefono); return; }
+            if (string.IsNullOrWhiteSpace(textMail.Text)) { MostrarAdvertencia("Campo Correo obligatorio.", textMail); return; }
+            if (string.IsNullOrWhiteSpace(textCedula.Text)) { MostrarAdvertencia("Campo Cédula obligatorio.", textCedula); return; }
+            if (comboEspecialidad.SelectedIndex == -1) { MostrarAdvertencia("Seleccione una especialidad.", comboEspecialidad); return; }
 
-            if (string.IsNullOrWhiteSpace(textNombreM.Text))
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                try
+                {
+                    conn.Open();
+                    // Corregido: cedulaProfesional
+                    string consulta = @"INSERT INTO medicos 
+                                      (nombre, apellidoPaterno, apellidoMaterno, telefono, correo, cedulaProfesional, idEspecialidad) 
+                                      VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @telefono, @correo, @cedula, @idEspecialidad)";
 
-                textNombreM.Focus();
-                return;
+                    MySqlCommand comando = new MySqlCommand(consulta, conn);
+                    comando.Parameters.AddWithValue("@nombre", textNombreM.Text);
+                    comando.Parameters.AddWithValue("@apellidoPaterno", textApellidoP.Text);
+                    comando.Parameters.AddWithValue("@apellidoMaterno", textApellidoM.Text);
+                    comando.Parameters.AddWithValue("@telefono", textTelefono.Text);
+                    comando.Parameters.AddWithValue("@correo", textMail.Text);
+                    comando.Parameters.AddWithValue("@cedula", textCedula.Text);
+                    comando.Parameters.AddWithValue("@idEspecialidad", comboEspecialidad.SelectedValue); 
 
+                    comando.ExecuteNonQuery();
+
+                    MessageBox.Show("Registro Exitoso.", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    this.DialogResult = DialogResult.OK; 
+                    this.Close(); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
 
-            if (string.IsNullOrWhiteSpace(textApellidoP.Text))
-            {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                textApellidoP.Focus();
-                return;
-
-            }
-
-            if (string.IsNullOrWhiteSpace(textApellidoM.Text))
-            {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                textApellidoM.Focus();
-                return;
-
-            }
-
-            if (string.IsNullOrWhiteSpace(textTelefono.Text))
-            {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                textTelefono.Focus();
-                return;
-
-            }
-
-            if (string.IsNullOrWhiteSpace(textMail.Text))
-            {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                textMail.Focus();
-                return;
-
-            }
-
-            if (string.IsNullOrWhiteSpace(textCedula.Text))
-            {
-                MessageBox.Show(
-                    "Campo obligatorio.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                textCedula.Focus();
-                return;
-
-            }
-
-            if (comboEspecialidad.SelectedIndex == -1)
-            {
-                MessageBox.Show(
-                    "Seleccione una especialidad.",
-                    "Validación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                comboEspecialidad.Focus();
-                return;
-            }
-
-            conect = new PruebaDataAcces();
-            MySqlConnection conex = conect.GetConnection();
-
-            string consulta = "INSERT INTO Medicos " +
-                "(nombre, apellido_paterno, apellido_materno, telefono, correo_electronico, cedula, especialidad)" + 
-                " VALUES (@nombre, @apellidoPaterno, @apellidoMaterno, @telefono, @correo, @cedula, @especialidad)";
-
-            MySqlCommand comando = new MySqlCommand(consulta, conex);
-            comando.Parameters.AddWithValue("@nombre", textNombreM.Text);
-            comando.Parameters.AddWithValue("@apellidoPaterno", textApellidoP.Text);
-            comando.Parameters.AddWithValue("@apellidoMaterno", textApellidoM.Text);
-            comando.Parameters.AddWithValue("@telefono", textTelefono.Text);
-            comando.Parameters.AddWithValue("@correo", textMail.Text);
-            comando.Parameters.AddWithValue("@cedula", textCedula.Text);
-            comando.Parameters.AddWithValue("@especialidad", comboEspecialidad.Text);
-
-            comando.ExecuteNonQuery();
-            conex.Close();
-
-            MessageBox.Show(
-                "Registro Exitoso.",
-                "Registro",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            
-            LimpiarFormulario();
-            textNombreM.Focus();
-            
+        private void MostrarAdvertencia(string mensaje, Control control)
+        {
+            MessageBox.Show(mensaje, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            control.Focus();
         }
 
         private void btonCancelar_Click(object sender, EventArgs e)
@@ -165,7 +122,6 @@ namespace pry_integrador.Medicos.Registro_de_medicos
             textMail.Clear();
             textCedula.Clear();
             comboEspecialidad.SelectedIndex = -1;
-
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using pry_integrador.Registro_de_Pacientes;
 
 namespace pry_integrador
 {
@@ -74,7 +75,7 @@ namespace pry_integrador
 
         private void btn_pacientes_Click(object sender, EventArgs e)
         {
-
+            CargarVista(new PacienteUC());
         }
 
         private void btn_pacientes_MouseHover(object sender, EventArgs e)

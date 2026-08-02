@@ -37,25 +37,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnelContenido = new System.Windows.Forms.Panel();
-            this.dgvMedicos = new System.Windows.Forms.DataGridView();
-            this.id_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo_electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnelSup
             // 
             this.pnelSup.AutoScroll = true;
-            this.pnelSup.BackColor = System.Drawing.Color.White;
+            this.pnelSup.BackColor = System.Drawing.Color.LightBlue;
             this.pnelSup.Controls.Add(this.btonEliminar);
             this.pnelSup.Controls.Add(this.btonEditar);
             this.pnelSup.Controls.Add(this.btonNMedico);
@@ -64,9 +56,11 @@
             this.pnelSup.Controls.Add(this.label1);
             this.pnelSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnelSup.Location = new System.Drawing.Point(0, 0);
+            this.pnelSup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnelSup.Name = "pnelSup";
-            this.pnelSup.Size = new System.Drawing.Size(1606, 90);
+            this.pnelSup.Size = new System.Drawing.Size(1510, 72);
             this.pnelSup.TabIndex = 0;
+            this.pnelSup.Paint += new System.Windows.Forms.PaintEventHandler(this.pnelSup_Paint);
             // 
             // btonEliminar
             // 
@@ -74,9 +68,10 @@
             this.btonEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(42)))), ((int)(((byte)(39)))));
             this.btonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btonEliminar.ForeColor = System.Drawing.Color.White;
-            this.btonEliminar.Location = new System.Drawing.Point(888, 39);
+            this.btonEliminar.Location = new System.Drawing.Point(789, 31);
+            this.btonEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btonEliminar.Name = "btonEliminar";
-            this.btonEliminar.Size = new System.Drawing.Size(119, 32);
+            this.btonEliminar.Size = new System.Drawing.Size(106, 28);
             this.btonEliminar.TabIndex = 4;
             this.btonEliminar.Text = "Eliminar";
             this.btonEliminar.UseVisualStyleBackColor = false;
@@ -88,9 +83,10 @@
             this.btonEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(120)))), ((int)(((byte)(228)))));
             this.btonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btonEditar.ForeColor = System.Drawing.Color.White;
-            this.btonEditar.Location = new System.Drawing.Point(747, 39);
+            this.btonEditar.Location = new System.Drawing.Point(664, 31);
+            this.btonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btonEditar.Name = "btonEditar";
-            this.btonEditar.Size = new System.Drawing.Size(119, 32);
+            this.btonEditar.Size = new System.Drawing.Size(106, 28);
             this.btonEditar.TabIndex = 4;
             this.btonEditar.Text = "Editar";
             this.btonEditar.UseVisualStyleBackColor = false;
@@ -102,9 +98,10 @@
             this.btonNMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
             this.btonNMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btonNMedico.ForeColor = System.Drawing.Color.White;
-            this.btonNMedico.Location = new System.Drawing.Point(608, 39);
+            this.btonNMedico.Location = new System.Drawing.Point(540, 31);
+            this.btonNMedico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btonNMedico.Name = "btonNMedico";
-            this.btonNMedico.Size = new System.Drawing.Size(121, 32);
+            this.btonNMedico.Size = new System.Drawing.Size(108, 28);
             this.btonNMedico.TabIndex = 3;
             this.btonNMedico.Text = "Nuevo Medico";
             this.btonNMedico.UseVisualStyleBackColor = false;
@@ -113,9 +110,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -123,18 +121,19 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(50, 43);
+            this.textBox1.Location = new System.Drawing.Point(44, 34);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 26);
+            this.textBox1.Size = new System.Drawing.Size(317, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(11, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 31);
+            this.label1.Size = new System.Drawing.Size(211, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestion de Medicos";
             // 
@@ -142,112 +141,33 @@
             // 
             this.pnelContenido.AutoSize = true;
             this.pnelContenido.BackColor = System.Drawing.Color.White;
-            this.pnelContenido.Controls.Add(this.dgvMedicos);
+            this.pnelContenido.Controls.Add(this.dataGridView1);
             this.pnelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnelContenido.Location = new System.Drawing.Point(0, 90);
+            this.pnelContenido.Location = new System.Drawing.Point(0, 72);
+            this.pnelContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnelContenido.Name = "pnelContenido";
-            this.pnelContenido.Size = new System.Drawing.Size(1606, 671);
+            this.pnelContenido.Size = new System.Drawing.Size(1510, 537);
             this.pnelContenido.TabIndex = 1;
             // 
-            // dgvMedicos
+            // dataGridView1
             // 
-            this.dgvMedicos.AllowUserToAddRows = false;
-            this.dgvMedicos.AllowUserToDeleteRows = false;
-            this.dgvMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMedicos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_medico,
-            this.nombre,
-            this.apellido_paterno,
-            this.apellido_materno,
-            this.telefono,
-            this.correo_electronico,
-            this.cedula,
-            this.especialidad});
-            this.dgvMedicos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedicos.Location = new System.Drawing.Point(0, 0);
-            this.dgvMedicos.MultiSelect = false;
-            this.dgvMedicos.Name = "dgvMedicos";
-            this.dgvMedicos.ReadOnly = true;
-            this.dgvMedicos.RowHeadersWidth = 62;
-            this.dgvMedicos.RowTemplate.Height = 28;
-            this.dgvMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicos.Size = new System.Drawing.Size(1606, 671);
-            this.dgvMedicos.TabIndex = 1;
-            // 
-            // id_medico
-            // 
-            this.id_medico.DataPropertyName = "id_medico";
-            this.id_medico.HeaderText = "Id_medico";
-            this.id_medico.MinimumWidth = 8;
-            this.id_medico.Name = "id_medico";
-            this.id_medico.ReadOnly = true;
-            this.id_medico.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 8;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido_paterno
-            // 
-            this.apellido_paterno.DataPropertyName = "apellido_paterno";
-            this.apellido_paterno.HeaderText = "Apellido Paterno";
-            this.apellido_paterno.MinimumWidth = 8;
-            this.apellido_paterno.Name = "apellido_paterno";
-            this.apellido_paterno.ReadOnly = true;
-            // 
-            // apellido_materno
-            // 
-            this.apellido_materno.DataPropertyName = "apellido_materno";
-            this.apellido_materno.HeaderText = "Apellido Materno";
-            this.apellido_materno.MinimumWidth = 8;
-            this.apellido_materno.Name = "apellido_materno";
-            this.apellido_materno.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.MinimumWidth = 8;
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // correo_electronico
-            // 
-            this.correo_electronico.DataPropertyName = "correo_electronico";
-            this.correo_electronico.HeaderText = "Correo Electronico";
-            this.correo_electronico.MinimumWidth = 8;
-            this.correo_electronico.Name = "correo_electronico";
-            this.correo_electronico.ReadOnly = true;
-            // 
-            // cedula
-            // 
-            this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "Cedula Profesional";
-            this.cedula.MinimumWidth = 8;
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
-            // 
-            // especialidad
-            // 
-            this.especialidad.DataPropertyName = "especialidad";
-            this.especialidad.HeaderText = "Especialidad";
-            this.especialidad.MinimumWidth = 8;
-            this.especialidad.Name = "especialidad";
-            this.especialidad.ReadOnly = true;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1510, 530);
+            this.dataGridView1.TabIndex = 0;
             // 
             // FormGestionMedicos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1606, 761);
+            this.ClientSize = new System.Drawing.Size(1510, 609);
             this.Controls.Add(this.pnelContenido);
             this.Controls.Add(this.pnelSup);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormGestionMedicos";
             this.Text = "FormGestionMedicos";
             this.Load += new System.EventHandler(this.FormGestionMedicos_Load);
@@ -255,7 +175,7 @@
             this.pnelSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnelContenido.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,14 +191,6 @@
         private System.Windows.Forms.Panel pnelContenido;
         private System.Windows.Forms.Button btonEliminar;
         private System.Windows.Forms.Button btonEditar;
-        private System.Windows.Forms.DataGridView dgvMedicos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_medico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_paterno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_materno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo_electronico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidad;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

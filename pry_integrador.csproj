@@ -198,6 +198,18 @@
     <Compile Include="UserControl\FormHelp.Designer.cs">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\FormMensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\FormMensajes.Designer.cs">
+      <DependentUpon>FormMensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\FormRecordatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\FormRecordatorios.Designer.cs">
+      <DependentUpon>FormRecordatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\FormReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\FormAgendaCitas.resx">
       <DependentUpon>FormAgendaCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\FormMensajes.resx">
+      <DependentUpon>FormMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\FormRecordatorios.resx">
+      <DependentUpon>FormRecordatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>

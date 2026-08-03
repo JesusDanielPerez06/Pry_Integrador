@@ -12,70 +12,122 @@ namespace pry_integrador.Registro_de_Pacientes
 {
     public partial class FormDatosPersonales : Form
     {
+        public string NombreS
+        {
+            get { return textNombreS.Text.Trim(); }
+        }
+
+        public string ApellidoPaterno
+        {
+            get { return txtAP.Text.Trim(); }
+        }
+
+        public string ApellidoMaterno
+        {
+            get { return txtAM.Text.Trim(); }
+        }
+
+        public DateTime FechaNacimiento
+        {
+            get { return dtpFechaNacimiento.Value.Date; }
+        }
+
+        public string nacionalidad
+        {
+            get { return textNacionalidad.Text.Trim(); }
+        }
+
+        public string Curp
+        {
+            get { return txtCurp.Text.Trim(); }
+        }
+
+        public string genero
+        {
+            get { return cboGenero.Text; }
+        }
+
+        public string Estadocivil
+        {
+            get { return cboEstadoCivil.Text; }
+        }
+
         public FormDatosPersonales()
         {
             InitializeComponent();
 
-            textNombre.CharacterCasing = CharacterCasing.Upper;
-            textApellidoPaterno.CharacterCasing = CharacterCasing.Upper;
-            textApellidoMaterno.CharacterCasing = CharacterCasing.Upper;
+            textNombreS.CharacterCasing = CharacterCasing.Upper;
+            txtAP.CharacterCasing = CharacterCasing.Upper;
+            txtAM.CharacterCasing = CharacterCasing.Upper;
             textNacionalidad.CharacterCasing = CharacterCasing.Upper;
-            textCurp.CharacterCasing = CharacterCasing.Upper;
+            txtCurp.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        public FormDatosPersonales(string nombre,string apellidoPaterno,string apellidoMaterno,DateTime fechaNacimiento, string nacionalidadPaciente,string curp,string generoPaciente,string estadoCivil) : this()
+        {
+            textNombreS.Text = nombre;
+            txtAP.Text = apellidoPaterno;
+            txtAM.Text = apellidoMaterno;
+            dtpFechaNacimiento.Value = fechaNacimiento;
+            textNacionalidad.Text = nacionalidadPaciente;
+            txtCurp.Text = curp;
+            cboGenero.Text = generoPaciente;
+            cboEstadoCivil.Text = estadoCivil;
         }
 
         private void BtonSiguiente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textNombre.Text))
+            if (string.IsNullOrWhiteSpace(textNombreS.Text))
             {
-                MostrarAdvertencia("El campo Nombre(s) es obligatorio.", textNombre);
+                MostrarAdvertencia("El campo Nombre(s) es obligatorio.", textNombreS);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textApellidoPaterno.Text))
+            if (string.IsNullOrWhiteSpace(txtAP.Text))
             {
-                MostrarAdvertencia("El campo Apellido Paterno es obligatorio.", textApellidoPaterno);
+                MostrarAdvertencia("El campo Apellido Paterno es obligatorio.", txtAP);
                 return;
             }
 
-            if (dateTimePickerNacimiento.Value > DateTime.Now)
+            if (dtpFechaNacimiento.Value > DateTime.Now)
             {
-                MostrarAdvertencia("La fecha de nacimiento no puede ser mayor a la fecha actual.", dateTimePickerNacimiento);
+                MostrarAdvertencia("La fecha de nacimiento no puede ser mayor a la fecha actual.", dtpFechaNacimiento);
                 return;
             }
 
-            // 4. Validar Nacionalidad
+            
             if (string.IsNullOrWhiteSpace(textNacionalidad.Text))
             {
                 MostrarAdvertencia("El campo Nacionalidad es obligatorio.", textNacionalidad);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textCurp.Text))
+            if (string.IsNullOrWhiteSpace(txtCurp.Text))
             {
-                MostrarAdvertencia("El campo CURP es obligatorio.", textCurp);
+                MostrarAdvertencia("El campo CURP es obligatorio.", txtCurp);
                 return;
             }
 
-            if (textCurp.Text.Length != 18)
+            if (txtCurp.Text.Length != 18)
             {
                 MessageBox.Show(
                     "El CURP debe tener exactamente 18 caracteres.",
                     "Validación de CURP",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                textCurp.Focus();
+                txtCurp.Focus();
                 return;
             }
 
-            if (comboGenero.SelectedIndex == -1)
+            if (cboGenero.SelectedIndex == -1)
             {
-                MostrarAdvertencia("Debe seleccionar un género.", comboGenero);
+                MostrarAdvertencia("Debe seleccionar un género.", cboGenero);
                 return;
             }
 
-            if (comboEstadoCivil.SelectedIndex == -1)
+            if (cboEstadoCivil.SelectedIndex == -1)
             {
-                MostrarAdvertencia("Debe seleccionar un estado civil.", comboEstadoCivil);
+                MostrarAdvertencia("Debe seleccionar un estado civil.", cboEstadoCivil);
                 return;
             }
 

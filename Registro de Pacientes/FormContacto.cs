@@ -12,81 +12,134 @@ namespace pry_integrador.Registro_de_Pacientes
 {
     public partial class FormContacto : Form
     {
+        public string TelefonoPaciente
+        {
+            get { return txtTelefono.Text.Trim(); }
+        }
+
+        public string DireccionPaciente
+        {
+            get { return txtDireccion.Text.Trim(); }
+        }
+
+        public string CiudadPaciente
+        {
+            get { return txtCiudad.Text.Trim(); }
+        }
+
+        public string EstadoPaciente
+        {
+            get { return txtEstado.Text.Trim(); }
+        }
+
+        public string CodigoPostal
+        {
+            get { return txtCP.Text.Trim(); }
+        }
+
+        public string ContactoEmergencia
+        {
+            get { return txtNombre.Text.Trim(); }
+        }
+
+        public string TelefonoEmergencia
+        {
+            get { return txtTele.Text.Trim(); }
+        }
+
+        public string RelacionContacto
+        {
+            get { return cboRelacion.Text; }
+        }
+
         public FormContacto()
         {
             InitializeComponent();
 
-            textTelefono.CharacterCasing = CharacterCasing.Upper;
-            textDireccion.CharacterCasing = CharacterCasing.Upper;
-            textCiudad.CharacterCasing = CharacterCasing.Upper;
-            textEstado.CharacterCasing = CharacterCasing.Upper;
-            textCodigoPostal.CharacterCasing = CharacterCasing.Upper;
-            textNombreEmergencia.CharacterCasing = CharacterCasing.Upper;
-            textTelefonoEmergencia.CharacterCasing = CharacterCasing.Upper;
+            txtTelefono.CharacterCasing = CharacterCasing.Upper;
+            txtDireccion.CharacterCasing = CharacterCasing.Upper;
+            txtCiudad.CharacterCasing = CharacterCasing.Upper;
+            txtEstado.CharacterCasing = CharacterCasing.Upper;
+            txtCP.CharacterCasing = CharacterCasing.Upper;
+            txtNombre.CharacterCasing = CharacterCasing.Upper;
+            txtTele.CharacterCasing = CharacterCasing.Upper;
         }
+
+        public FormContacto( string telefono, string direccion,string ciudad, string estado, string codigoPostal,string contactoEmergencia, string telefonoEmergencia,string relacionContacto) : this()
+        {
+            txtTelefono.Text = telefono;
+            txtDireccion.Text = direccion;
+            txtCiudad.Text = ciudad;
+            txtEstado.Text = estado;
+            txtCP.Text = codigoPostal;
+            txtNombre.Text = contactoEmergencia;
+            txtTele.Text = telefonoEmergencia;
+            cboRelacion.Text = relacionContacto;
+        }
+
 
         private void BtonSiguiente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textTelefono.Text))
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
-                MostrarAdvertencia("El campo Teléfono es obligatorio.", textTelefono);
+                MostrarAdvertencia("El campo Teléfono es obligatorio.", txtTelefono);
                 return;
             }
-            if (textTelefono.Text.Length != 10)
+            if (txtTelefono.Text.Length != 10)
             {
-                MostrarAdvertencia("El teléfono del paciente debe tener exactamente 10 dígitos.", textTelefono);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(textDireccion.Text))
-            {
-                MostrarAdvertencia("El campo Dirección es obligatorio.", textDireccion);
+                MostrarAdvertencia("El teléfono del paciente debe tener exactamente 10 dígitos.", txtTelefono);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textCiudad.Text))
+            if (string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
-                MostrarAdvertencia("El campo Ciudad es obligatorio.", textCiudad);
+                MostrarAdvertencia("El campo Dirección es obligatorio.", txtDireccion);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textEstado.Text))
+            if (string.IsNullOrWhiteSpace(txtCiudad.Text))
             {
-                MostrarAdvertencia("El campo Estado es obligatorio.", textEstado);
+                MostrarAdvertencia("El campo Ciudad es obligatorio.", txtCiudad);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textCodigoPostal.Text))
+            if (string.IsNullOrWhiteSpace(txtEstado.Text))
             {
-                MostrarAdvertencia("El campo Código Postal es obligatorio.", textCodigoPostal);
-                return;
-            }
-            if (textCodigoPostal.Text.Length != 5)
-            {
-                MostrarAdvertencia("El código postal debe tener exactamente 5 caracteres.", textCodigoPostal);
+                MostrarAdvertencia("El campo Estado es obligatorio.", txtEstado);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textNombreEmergencia.Text))
+            if (string.IsNullOrWhiteSpace(txtCP.Text))
             {
-                MostrarAdvertencia("El nombre del contacto de emergencia es obligatorio.", textNombreEmergencia);
+                MostrarAdvertencia("El campo Código Postal es obligatorio.", txtCP);
+                return;
+            }
+            if (txtCP.Text.Length != 5)
+            {
+                MostrarAdvertencia("El código postal debe tener exactamente 5 caracteres.", txtCP);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textTelefonoEmergencia.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MostrarAdvertencia("El teléfono de emergencia es obligatorio.", textTelefonoEmergencia);
-                return;
-            }
-            if (textTelefonoEmergencia.Text.Length != 10)
-            {
-                MostrarAdvertencia("El teléfono de emergencia debe tener exactamente 10 dígitos.", textTelefonoEmergencia);
+                MostrarAdvertencia("El nombre del contacto de emergencia es obligatorio.", txtNombre);
                 return;
             }
 
-            if (comboRelacion.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(txtTele.Text))
             {
-                MostrarAdvertencia("Debe seleccionar la relación con el paciente.", comboRelacion);
+                MostrarAdvertencia("El teléfono de emergencia es obligatorio.", txtTele);
+                return;
+            }
+            if (txtTele.Text.Length != 10)
+            {
+                MostrarAdvertencia("El teléfono de emergencia debe tener exactamente 10 dígitos.", txtTele);
+                return;
+            }
+
+            if (cboRelacion.SelectedIndex == -1)
+            {
+                MostrarAdvertencia("Debe seleccionar la relación con el paciente.", cboRelacion);
                 return;
             }
 
@@ -100,6 +153,13 @@ namespace pry_integrador.Registro_de_Pacientes
             this.Close();
         }
 
+        private void BtonAnterior_Click_1(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Retry;
+            Close();
+        }
+
+
         private void MostrarAdvertencia(string mensaje, Control control)
         {
             MessageBox.Show(
@@ -109,5 +169,7 @@ namespace pry_integrador.Registro_de_Pacientes
                 MessageBoxIcon.Warning);
             control.Focus();
         }
+
+
     }
 }

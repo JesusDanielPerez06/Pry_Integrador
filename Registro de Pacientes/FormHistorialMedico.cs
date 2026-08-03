@@ -12,29 +12,84 @@ namespace pry_integrador.Registro_de_Pacientes
 {
     public partial class FormHistorialMedico : Form
     {
+        public string TipoSangre
+        {
+            get { return cboTipoSangre.Text; }
+        }
+
+        public string alergias
+        {
+            get { return txtAleConocidas.Text.Trim(); }
+        }
+
+        public string CondicionesCronicas
+        {
+            get { return txtCondiCronicas.Text.Trim(); }
+        }
+
+        public string MedicamentosActuales
+        {
+            get { return txtMediActuales.Text.Trim(); }
+        }
+
+        public string Cirugias
+        {
+            get { return txtCiruAoIP.Text.Trim(); }
+        }
+
+        public string AntecedentesFamiliares
+        {
+            get { return txtAntecedentesFamiliares.Text.Trim(); }
+        }
+
+        public string Observaciones
+        {
+            get { return txtObservaciones.Text.Trim(); }
+        }
+
+        public string PresionArterial
+        {
+            get { return txtPArterial.Text.Trim(); }
+        }
+
         public FormHistorialMedico()
         {
             InitializeComponent();
 
-            textAlergias.CharacterCasing = CharacterCasing.Upper;
-            textCondiciones.CharacterCasing = CharacterCasing.Upper;
-            textMedicamentos.CharacterCasing = CharacterCasing.Upper;
-            textCirugias.CharacterCasing = CharacterCasing.Upper;
-            textAntecedentes.CharacterCasing = CharacterCasing.Upper;
-            textObservaciones.CharacterCasing = CharacterCasing.Upper;
-            textPresion.CharacterCasing = CharacterCasing.Upper;
+            txtAleConocidas.CharacterCasing = CharacterCasing.Upper;
+            txtCondiCronicas.CharacterCasing = CharacterCasing.Upper;
+            txtMediActuales.CharacterCasing = CharacterCasing.Upper;
+            txtCiruAoIP.CharacterCasing = CharacterCasing.Upper;
+            txtAntecedentesFamiliares.CharacterCasing = CharacterCasing.Upper;
+            txtObservaciones.CharacterCasing = CharacterCasing.Upper;
+            txtPArterial.CharacterCasing = CharacterCasing.Upper;
         }
+
+
+        public FormHistorialMedico(string tipoSangre,string alergiasPaciente,string condicionesCronicas,string medicamentosActuales, string cirugias,string antecedentesFamiliares,string presionArterial,string observaciones): this()
+        {
+            cboTipoSangre.Text = tipoSangre;
+            txtAleConocidas.Text = alergiasPaciente;
+            txtCondiCronicas.Text = condicionesCronicas;
+            txtMediActuales.Text = medicamentosActuales;
+            txtCiruAoIP.Text = cirugias;
+            txtAntecedentesFamiliares.Text = antecedentesFamiliares;
+            txtPArterial.Text = presionArterial;
+            txtObservaciones.Text = observaciones;
+        }
+
+
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (comboTipoSangre.SelectedIndex == -1)
+            if (cboTipoSangre.SelectedIndex == -1)
             {
                 MessageBox.Show(
                     "Por favor, seleccione el tipo de sangre del paciente.",
                     "Validación de Historial Médico",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-                comboTipoSangre.Focus();
+                cboTipoSangre.Focus();
                 return;
             }
 
@@ -44,8 +99,8 @@ namespace pry_integrador.Registro_de_Pacientes
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            DialogResult = DialogResult.Retry;
+            Close();
         }
 
         private void label11_Click(object sender, EventArgs e)
